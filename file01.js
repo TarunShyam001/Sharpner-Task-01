@@ -12,17 +12,19 @@ function handleFormSubmit(event){
     category
   };
 
+
   data.push(userDetails);
   for(let i=0; i<data.length; i++){
     localStorage.setItem(data[i].description , JSON.stringify(data[i]))
   }
-  showDetails (userDetails)
+  showDetails (userDetails);
   
   document.getElementById('amount').value = '';
   document.getElementById('desc').value = '';
   document.getElementById('category').value = '';
 }
 function showDetails (userDetails) {
+
   const listOfItems = document.getElementById('list-of-items');
   const newLi = document.createElement('li');
   newLi.textContent = userDetails.amount + '-' + userDetails.category + '-' + userDetails.description + '  ';
